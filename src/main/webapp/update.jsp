@@ -60,8 +60,8 @@ if(request.getParameter("bbsID") != null) {
 if(bbsID == 0) {
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
-	script.println("alert('유효하지 않은 글입니다.')");
-	script.println("location.href='bbs.jsp'");
+	script.println("alert('유효하지 않은 글입니다.');");
+	script.println("location.href='bbs.jsp';");
 	script.println("</script>");
 }
 
@@ -69,8 +69,8 @@ Bbs bbs = new BbsDAO().getBbs(bbsID);
 if(!UserID.equals(bbs.getUserID())) {
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
-	script.println("alert('권한이 없습니다.')");
-	script.println("location.href='bbs.jsp'");
+	script.println("alert('권한이 없습니다.');");
+	script.println("location.href='bbs.jsp';");
 	script.println("</script>");
 }
 %>
