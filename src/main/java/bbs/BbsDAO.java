@@ -41,7 +41,7 @@ public class BbsDAO {
 	}
 	//글쓰기
 	public int write(String bbsTitle, String UserID, String bbsContent) {
-		String sql="INSERT INTO bbs VALUES(?, ?, ?, ?, ?, ?)";
+		String sql="INSERT INTO bbs VALUES(?, ?, ?, ?, ?, ?, 0)";
 		try {
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, getNext());
@@ -75,6 +75,7 @@ public class BbsDAO {
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsAvailable(rs.getInt(6));
+				bbs.setLikeCount(rs.getInt(7));
 				list.add(bbs);
 			}
 		}catch (Exception e) {
@@ -147,5 +148,25 @@ public class BbsDAO {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	
+	//게시글 좋아요 메소드	
+	public int like(String bbsID) {
+		String sql = "UPDATE bbs SET likeCount = likeCount + 1 WHERE bbsID = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql); //이 코드 자체가 try 안에서만 사용 가능. 같은함수 두개사용 전역변수 주려고 밖에 전역변수 선언
+			pstmt.setString(1, bbsID);
+			return pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} return -1;
 	}
 }

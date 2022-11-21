@@ -87,13 +87,13 @@ if(session.getAttribute("UserID")!=null) {
 <aside>
     <h3>웹툰 바로가기</h3>
     <a href="https://comic.naver.com/index" target="_blank">
-        <img src="media/naverwebtoon.jpg" alt="네이버웹툰"; width="125px"; height="125px";>
+        <img src="media/naverwebtoon.png" alt="네이버웹툰" width="125px" height="125px">
     </a><br>
     <a href="https://page.kakao.com/" target="_blank">
-        <img src="media/kakaopage.jpg" alt="카카오페이지"; width="125px"; height="125px";>
+        <img src="media/kakaopage.png" alt="카카오페이지" width="125px" height="125px">
     </a><br>
     <a href="https://webtoon.kakao.com/" target="_blank">
-        <img src="media/kakaowebtoon.jpg" alt="카카오웹툰"; width="125px"; height="125px";>
+        <img src="media/kakaowebtoon.png" alt="카카오웹툰" width="125px" height="125px">
     </a>
 </aside>
 <footer>

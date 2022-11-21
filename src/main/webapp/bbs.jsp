@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 body { font-family: "맑은 고딕", "고딕", "굴림"; width: 800px; margin: auto;}
@@ -110,6 +110,7 @@ if(request.getParameter("pageNumber") != null) {
                 <th colspan="2" id="title">제목</th>
                 <th id="who">작성자</th>
                 <th id="date">날짜</th>
+                <th id="like">좋아요</th>
             </tr>
         </thead>
         <tbody>
@@ -123,6 +124,7 @@ if(request.getParameter("pageNumber") != null) {
                 <td><a href="view.jsp?bbsID=<%= list.get(i).getBbsID() %>" id="ahref"><%= list.get(i).getBbsTitle() %></a></td>
                 <td><%= list.get(i).getUserID() %></td>
                 <td><%= list.get(i).getBbsDate().substring(0,11) + list.get(i).getBbsDate().substring(11,13) + "시" + list.get(i).getBbsDate().substring(14,16) + "분"%></td>
+                <td><%= list.get(i).getLikeCount() %></td>
             </tr>
             <%
         		}

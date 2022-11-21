@@ -126,6 +126,9 @@ if(UserID != null && UserID.equals(bbs.getUserID())){
 <%
 }
 %>
+<form method="post" action="likeAction.jsp?bbsID=<%=bbsID %>">
+<input type="submit" value="좋아요">
+</form>
 </div>
 </div>
 <footer>
