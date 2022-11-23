@@ -46,7 +46,7 @@ tbody { border-bottom: 1px solid lightgray;}
 
 .write_btn {text-align:center;}
 
-.pagenum { text-decoration:none; color:black; font-szie:50px;}
+.pagenum { text-decoration:none; color:black; font-size:50px;}
 
 footer { clear: both; width: 800px; margin-bottom: 1px; 
         background-color: #333; color: white; text-align: center;}
@@ -134,7 +134,7 @@ if(request.getParameter("pageNumber") != null) {
     <%
     if(pageNumber != 1) {
     %>
-    <a href="bbs.jsp?pageNumber=<%= pageNumber -1 %>" class="pagenum"><</a>
+    <a href="bbs.jsp?pageNumber=<%= pageNumber -1 %>" class="pagenum">&lt;</a>
     <%
     } if(bbsDAO.nextPage(pageNumber + 1)) {
     %>

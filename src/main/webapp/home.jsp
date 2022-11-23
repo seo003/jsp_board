@@ -14,7 +14,6 @@ p { line-height: 20px; font-size: 12px;}
 
 header { width: 100%; height: 150px; 
          background-image: url(media/제목.jpg); 
-         background-repeat: no-repeat;
          background-position: right center;}
 header h1 { font-size:3em;}
 header nav { float: right; width:40%;  }
